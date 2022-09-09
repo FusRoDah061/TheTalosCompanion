@@ -11,6 +11,8 @@
                 screenBounds.Width - this.Width - 10,
                 screenBounds.Height - this.Height - 10
             );
+
+            txtHexInput.Focus();
         }
 
         private void btnClose_Click(object sender, EventArgs e)
