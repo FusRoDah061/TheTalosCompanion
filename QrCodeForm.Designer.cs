@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(QrCodeForm));
             this.pbScreenshot = new System.Windows.Forms.PictureBox();
-            this.lblDecodedText = new System.Windows.Forms.Label();
+            this.txtDecodedText = new System.Windows.Forms.TextBox();
             this.tmrAutoClose = new System.Windows.Forms.Timer(this.components);
             this.pnlCloseTime = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pbScreenshot)).BeginInit();
@@ -50,22 +50,24 @@
             this.pbScreenshot.MouseEnter += new System.EventHandler(this.pbScreenshot_MouseEnter);
             this.pbScreenshot.MouseLeave += new System.EventHandler(this.pbScreenshot_MouseLeave);
             // 
-            // lblDecodedText
+            // txtDecodedText
             // 
-            this.lblDecodedText.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.txtDecodedText.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblDecodedText.BackColor = System.Drawing.Color.PaleGoldenrod;
-            this.lblDecodedText.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblDecodedText.ForeColor = System.Drawing.Color.Black;
-            this.lblDecodedText.Location = new System.Drawing.Point(6, 152);
-            this.lblDecodedText.Margin = new System.Windows.Forms.Padding(10);
-            this.lblDecodedText.Name = "lblDecodedText";
-            this.lblDecodedText.Padding = new System.Windows.Forms.Padding(5, 10, 5, 10);
-            this.lblDecodedText.Size = new System.Drawing.Size(470, 120);
-            this.lblDecodedText.TabIndex = 1;
-            this.lblDecodedText.MouseEnter += new System.EventHandler(this.lblDecodedText_MouseEnter);
-            this.lblDecodedText.MouseLeave += new System.EventHandler(this.lblDecodedText_MouseLeave);
+            this.txtDecodedText.BackColor = System.Drawing.Color.PaleGoldenrod;
+            this.txtDecodedText.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtDecodedText.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtDecodedText.ForeColor = System.Drawing.Color.Black;
+            this.txtDecodedText.Location = new System.Drawing.Point(6, 152);
+            this.txtDecodedText.Margin = new System.Windows.Forms.Padding(10);
+            this.txtDecodedText.Multiline = true;
+            this.txtDecodedText.Name = "txtDecodedText";
+            this.txtDecodedText.ReadOnly = true;
+            this.txtDecodedText.Size = new System.Drawing.Size(470, 120);
+            this.txtDecodedText.TabIndex = 1;
+            this.txtDecodedText.MouseEnter += new System.EventHandler(this.txtDecodedText_MouseEnter);
+            this.txtDecodedText.MouseLeave += new System.EventHandler(this.txtDecodedText_MouseLeave);
             // 
             // tmrAutoClose
             // 
@@ -91,7 +93,7 @@
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(482, 282);
             this.Controls.Add(this.pnlCloseTime);
-            this.Controls.Add(this.lblDecodedText);
+            this.Controls.Add(this.txtDecodedText);
             this.Controls.Add(this.pbScreenshot);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -107,13 +109,14 @@
             this.MouseLeave += new System.EventHandler(this.QrCodeForm_MouseLeave);
             ((System.ComponentModel.ISupportInitialize)(this.pbScreenshot)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
         private PictureBox pbScreenshot;
-        private Label lblDecodedText;
+        private TextBox txtDecodedText;
         private System.Windows.Forms.Timer tmrAutoClose;
         private Panel pnlCloseTime;
     }

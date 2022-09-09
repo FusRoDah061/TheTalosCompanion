@@ -28,12 +28,12 @@ namespace TheTalosCompanion
                 {
                     pbScreenshot.Image = screenshot;
 
-                    lblDecodedText.Text = MLA.DecodeQrcode(new Bitmap(pbScreenshot.Image));
+                    txtDecodedText.Text = MLA.DecodeQrcode(new Bitmap(pbScreenshot.Image));
                 }
             }
             catch
             {
-                lblDecodedText.Text = "";
+                txtDecodedText.Text = "";
             }
 
             pnlCloseTime.Width = this.Width;
@@ -56,12 +56,12 @@ namespace TheTalosCompanion
             tmrAutoClose.Start();
         }
 
-        private void lblDecodedText_MouseEnter(object sender, EventArgs e)
+        private void txtDecodedText_MouseEnter(object sender, EventArgs e)
         {
             tmrAutoClose.Stop();
         }
 
-        private void lblDecodedText_MouseLeave(object sender, EventArgs e)
+        private void txtDecodedText_MouseLeave(object sender, EventArgs e)
         {
             tmrAutoClose.Start();
         }
